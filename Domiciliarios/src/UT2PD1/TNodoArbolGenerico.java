@@ -57,45 +57,40 @@ public class TNodoArbolGenerico<T>{
     
     
     public boolean insertar(TNodoArbolGenerico unElemento) {
-        if (unElemento.getEtiqueta().compareTo(etiqueta) < 0) {
-            if (hijoIzq != null) {
-                return getHijoIzq().insertar(unElemento);
-            } else {
-                hijoIzq = unElemento;
-                return true;
-            }
-        } else if (unElemento.getEtiqueta().compareTo(etiqueta) > 0) {
-            if (hijoDer != null) {
-                return getHijoDer().insertar(unElemento);
-            } else {
-                hijoDer = unElemento;
-                return true;
-            }
-        } else {
-            // ya existe un elemento con la misma etiqueta.-
+        if (this.buscar(unElemento.getEtiqueta()) == null) {
             return false;
+        } else{
+            if (this.hijos.size() == 0){
+                this.insertar(unElemento);
+            }
+            else{
+                for (TNodoArbolGenerico hijo : hijos){
+                    if (unElemento.getEtiqueta().compareTo(hijo.getEtiqueta()) == -1){
+                        this.agregarHijo(unElemento);
+                    }                   
+                }
+            }    
         }
+        return false;
     }
+    
 
     /**
      * @param unaEtiqueta
      * @return
      */
     public TNodoArbolGenerico buscar(Comparable unaEtiqueta) {
-
         if (unaEtiqueta.equals(etiqueta)) {
             return this;
-        } else if (unaEtiqueta.compareTo(etiqueta) < 0) {
-            if (hijoIzq != null) {
-                return getHijoIzq().buscar(unaEtiqueta);
-            } else {
-                return null;
+        } else{
+            for (TNodoArbolGenerico hijo : hijos){
+                TNodoArbolGenerico nodo = hijo.buscar(unaEtiqueta);
+                if (nodo != null){
+                    return nodo;
+                }
             }
-        } else if (hijoDer != null) {
-            return getHijoDer().buscar(unaEtiqueta);
-        } else {
-            return null;
         }
+        return null;
     }
     
     public String preOrden() {
