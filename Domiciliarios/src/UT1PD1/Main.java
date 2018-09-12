@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UT1.Domiciliarios;
+package UT1PD1;
 
 import UT2PD1.*;
 
