@@ -1,54 +1,56 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package UT2PD7;
 
-import UT2PD2.*;
+import java.util.Collection;
 import java.util.LinkedList;
-//import uy.edu.ucu.aed.ties.TNodoTrie;
 
-public class TArbolTrie {
-
-    private TNodoTrie raiz;
-
-    public void insertar(String palabra, LinkedList<Integer> paginas) {
-        if (raiz == null) {
-            raiz = new TNodoTrie();
-        }
-        raiz.insertar(palabra, paginas);
-    }
+/**
+ *
+ * @author joaqu
+ */
+public class TArbolTrie implements IArbolTrie {
     
-    public void insertar(String palabra) {
+    private TNodoTrie raiz;
+    
+    
+      
+    @Override
+    public Collection<TAbonado> buscarTelefonos(String pais, String area) {
+    LinkedList<TAbonado> telefonos = null;
+        if (raiz == null) {
+            return telefonos;
+        } else {
+            
+            String prefijo = pais+area;
+            telefonos = new LinkedList<>();
+            TNodoTrie nodo = raiz.buscarPrefijo(prefijo);
+            if(nodo!= null){
+                 System.out.println("si hay coincidencias");
+            nodo.buscarTelefonos(prefijo, telefonos);
+               
+            return telefonos;
+            }
+            System.out.println("No hay coencidencias");
+            return null;
+        }
+    }
+    @Override
+    public void insertar(TAbonado unAbonado) {
         if (raiz == null) {
             raiz = new TNodoTrie();
         }
-        raiz.insertar(palabra);
+        
+            raiz.insertar(unAbonado);
+        
     }
 
     public void imprimir() {
         if (raiz != null) {
             raiz.imprimir();
         }
-    }
-    
-
-    public void imprimirPaginas() {
-        if (raiz != null) {
-            raiz.imprimirPaginas();
-        }
-    }
-  
-    public int buscar(String palabra) {
-         if(raiz !=null){
-           return raiz.buscar(palabra);
-        } 
-         else{
-             return 0;
-         }
-    }
-    public TNodoTrie buscarNodo(String palabra) {
-         if(raiz !=null){
-           return raiz.buscarNodo(palabra);
-        } 
-         else{
-             return null;
-         }
     }
 }

@@ -16,7 +16,13 @@ public class Main {
 
        // CARGAR EN EL TRIE LOS TELÉFONOS Y NOMBRES A PARTIR DEL ARCHIVO ABONADOS.TXT
         
-        
+       String[] archivo = ManejadorArchivosGenerico.leerArchivo("./src/UT2PD7/abonados.txt");
+       for (String renglon : archivo) {    
+            String[] linea = renglon.split(",");
+            TAbonado nodo = new TAbonado(linea[1],linea[0]);
+            trie.insertar(nodo);
+        } 
+       
         String codigoPais = "" ; // utilizar el indicado en el archivo "codigos.txt"
         String codigoArea = "" ;// utilizar el indicado en el archivo "codigos.txt"
         Collection<TAbonado> ab = trie.buscarTelefonos(codigoPais, codigoArea);
@@ -26,7 +32,7 @@ public class Main {
         // imprimir Nombre y teléfono, 
         // ordenados alfabeticamente por nombre
         
-        ManejadorArchivosGenerico.escribirArchivo("./src/salida.txt",.....);
+        //ManejadorArchivosGenerico.escribirArchivo("./src/salida.txt",.....);
         
     }
 }

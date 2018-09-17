@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UT2PD7;
+package UT2PD6;
 
 /**
  *
  * @author USER
  */
-import UT2PD6.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
