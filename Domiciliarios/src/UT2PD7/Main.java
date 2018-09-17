@@ -23,9 +23,19 @@ public class Main {
             trie.insertar(nodo);
         } 
        
-        String codigoPais = "" ; // utilizar el indicado en el archivo "codigos.txt"
-        String codigoArea = "" ;// utilizar el indicado en el archivo "codigos.txt"
+        String codigoPais = "598" ; // utilizar el indicado en el archivo "codigos.txt"
+        String codigoArea = "93" ;// utilizar el indicado en el archivo "codigos.txt"
+        
         Collection<TAbonado> ab = trie.buscarTelefonos(codigoPais, codigoArea);
+        
+        //trie.imprimir();
+        System.out.println("Cantidad de resultados: " + ab.size());
+        System.out.println("");
+        for(TAbonado a : ab){
+            System.out.println(a.getNombre() + " " + a.getTelefono());
+        }
+        
+        
         
         // crear el archivo "salida.txt", con los abonados (1 por linea) 
         // correspondientes al pais y area 
