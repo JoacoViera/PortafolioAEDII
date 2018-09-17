@@ -1,0 +1,5 @@
+4
+El patron buscado esta en Init.4 y fin.34
+El patron buscado esta en Init.4 y fin.7
+El patron buscado esta en Init.4 y fin.6
+El patron buscado esta en (4,6)

@@ -1,25 +1,21 @@
 package UT2PD6;
 
-import UT2PD2.*;
+
+import java.util.Collection;
 import java.util.LinkedList;
-//import uy.edu.ucu.aed.ties.TNodoTrie;
 
 public class TArbolTrie {
-
-    private TNodoTrie raiz;
-
-    public void insertar(String palabra, LinkedList<Integer> paginas) {
-        if (raiz == null) {
-            raiz = new TNodoTrie();
-        }
-        raiz.insertar(palabra, paginas);
-    }
     
-    public void insertar(String palabra) {
+    private TNodoTrie raiz;
+    
+  
+    public void insertar(String UnaClave , int ocurrencia) {
         if (raiz == null) {
             raiz = new TNodoTrie();
         }
-        raiz.insertar(palabra);
+        
+            raiz.insertar2(UnaClave, ocurrencia);
+        
     }
 
     public void imprimir() {
@@ -27,28 +23,25 @@ public class TArbolTrie {
             raiz.imprimir();
         }
     }
-    
-
-    public void imprimirPaginas() {
-        if (raiz != null) {
-            raiz.imprimirPaginas();
+    public LinkedList<Integer> buscarOcurrencias(String prefijo) {
+    LinkedList<Integer> secuencia = null;
+        if (raiz == null) {
+            return secuencia;
+        } else {
+            
+           
+            secuencia = new LinkedList<>();
+            TNodoTrie nodo = raiz.buscar_prefijo(prefijo);
+            if(nodo!= null){
+                 System.out.println("si hay coincidencias");
+            nodo.buscarSecuencia(prefijo, secuencia, nodo);
+               
+            return secuencia;
+            }
+            System.out.println("No hay coencidencias");
+            return null;
         }
     }
-  
-    public int buscar(String palabra) {
-         if(raiz !=null){
-           return raiz.buscar(palabra);
-        } 
-         else{
-             return 0;
-         }
-    }
-    public TNodoTrie buscarNodo(String palabra) {
-         if(raiz !=null){
-           return raiz.buscarNodo(palabra);
-        } 
-         else{
-             return null;
-         }
-    }
+ 
+       
 }

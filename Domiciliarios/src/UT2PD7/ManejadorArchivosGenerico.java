@@ -5,10 +5,7 @@
  */
 package UT2PD7;
 
-/**
- *
- * @author USER
- */
+
 import UT2PD6.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
