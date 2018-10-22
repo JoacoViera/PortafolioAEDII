@@ -1,15 +1,10 @@
 package UT4PD5;
 
 
-import UT4PD4.*;
-import UT4PD3.*;
-import UT4PD2.*;
-import java.util.Collection;
-
 public class PruebaGrafo {
 
     public static void main(String[] args) {
-        TGrafoDirigido gd = (TGrafoDirigido) UtilGrafos.cargarGrafo("./src/UT4PD4/aeropuertos.txt","./src/UT4PD4/conexiones.txt",
+        TGrafoDirigido gd = (TGrafoDirigido) UtilGrafos.cargarGrafo("./src/UT4PD5/aeropuertos.txt","./src/UT4PD5/conexiones.txt",
                 false, TGrafoDirigido.class);
      
 

@@ -1,7 +1,6 @@
 package UT4PD2;
 
 
-import java.util.Collection;
 
 public class PruebaGrafo {
 

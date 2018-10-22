@@ -1,10 +1,6 @@
 package UT4PD4;
 
 
-import UT4PD3.*;
-import UT4PD2.*;
-import java.util.Collection;
-
 public class PruebaGrafo {
 
     public static void main(String[] args) {
