@@ -1,0 +1,4 @@
+KB,TH,1
+TH,SB,1
+TH,AG,1
+AG,SB,1
