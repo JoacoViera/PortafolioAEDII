@@ -89,58 +89,11 @@ protected TAristas lasAristas = new TAristas() ;
         return vert;
     }
     
-    public Collection<TArista> prim2(){
-        LinkedList<TArista> t = new LinkedList<TArista>();
-        LinkedList<Comparable> u = new LinkedList<Comparable>();
-        LinkedList<Comparable> v = new LinkedList<Comparable>();
-        for (Iterator<TVertice> it = this.getVertices().values().iterator(); it.hasNext();) {
-            TVertice vert = it.next();
-            u.add(vert.getEtiqueta());
-        }
-        Iterator<TVertice> it2 = this.getVertices().values().iterator();
-        TVertice vert = it2.next();
-        v.add(vert.getEtiqueta());
-        u.remove(vert);
-        while(!u.isEmpty()){
-            TArista min = this.lasAristas.buscarMin(u, v);
-            t.add(min);
-            TVertice vert2 = this.getVertices().get(min.getEtiquetaDestino());
-            u.remove(vert2.getEtiqueta());
-            v.add(vert2.getEtiqueta());
-            System.out.println(vert2.getEtiqueta());
-        }
-        return t;
-    }
+   
 
     @Override
     public TGrafoNoDirigido Kruskal() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    public Collection<TArista> kruskal(){
-        SortedSet<TArista> lista = new TreeSet(getLasAristas());
-        LinkedList<TArista> miLista = new LinkedList<>();
-        LinkedList<TVertice> todosVertices = new LinkedList<>();
-        LinkedList<TVertice> misVertices = new LinkedList<>();
-        
-        for (Iterator<TVertice> it = this.getVertices().values().iterator(); it.hasNext();) {
-            TVertice vert = it.next();
-            todosVertices.add(vert);
-        }
-        while (!misVertices.containsAll(todosVertices)) {
-            try {
-                TArista ar = lista.first();
-                if (!misVertices.contains(this.getVertices().get(ar.etiquetaDestino))) {
-                    misVertices.add(this.getVertices().get(ar.etiquetaDestino));
-                    miLista.add(ar);
-                    System.out.println(ar.getEtiquetaDestino() + " " + ar.getEtiquetaOrigen());
-                }
-                lista.remove(ar);
-            } catch (Exception e) {
-                //System.out.println(e);
-                break;
-            }
-        }
-        return miLista;
-    }
 }
