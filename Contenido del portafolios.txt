@@ -1,0 +1,4 @@
+La carpeta de ejercicios Domiciliarios es un proyecto java el cual contiene una estructura dividida por source packages de la forma UTxTAy.
+La carpeta Estructuras contiene las estructuras que realizamos y con las que practicamos durantes las diferentes unidades tematicas del curso.
+Reflexiones post parciales contiene las reflexiones hechas luego de finalizados cada uno de los 3 parciales.
+Unidades Tematicas contiene los trabajos en clases realizados grupalmente de cada unidad tematica, separados por TA, ademas de contener las reflexiones de unidad de cada uno.
