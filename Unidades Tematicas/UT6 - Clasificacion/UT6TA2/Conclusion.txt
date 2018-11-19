@@ -1,0 +1,13 @@
+Para un vector de  300  elementos, podemos ver que el algoritmo que se comporta 
+mejor es el de Insercion Directa en el caso de distribucion ALEATORIA y
+ASCENDENTE, ademas podemos decir que el algoritmo de Burbuja tiene un tiempo
+bastante peor en ambos casos, unas aproximadamente 20 veces mas lento en el caso
+de un vector Ascendente y 7 veces mas lento con uno Aleatorio.
+Para el caso de una distribucion DESCENDENTE el mejor algoritmo es Shell Sort,
+superando por muy poco al algoritmo de Insercion Directa, en este caso tambien
+el algoritmo Burbuja muestra ser mas ineficiente siendo casi 3 veces mas lento.
+
+Para un vector de 10.000 elementos, podemos ver que el algoritmo que se comporta
+mejor es Insercion Directa para el caso de una distribucion ASCENDENTE. 
+Para el caso de una distribucion DESCENDENTE y ALEATORIA el mejor algoritmo es 
+el ShealSort
