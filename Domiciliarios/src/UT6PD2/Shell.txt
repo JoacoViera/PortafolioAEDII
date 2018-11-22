@@ -1,0 +1,15 @@
+SHELLSORT
+COM
+	DESDE k = t hasta 1 HACER	O(N)
+		h <- Inc[k]		O(1)
+		DESDE i = 1 + h hasta N HACER		O(N)
+			Aux <- V[i] 	O(1)
+			j <- i - h	O(1)
+			MIENTRAS (j > 0 Y Aux.clave < V[j].clave) HACER		O(N)
+				V[j+h] <- V[j] 		O(1)
+				j <- j - h 		O(1)
+			FIN MIENTRAS 
+			V[j+h] <- Aux			O(1) 
+		FIN DESDE
+	FIN DESDE 
+FIN
