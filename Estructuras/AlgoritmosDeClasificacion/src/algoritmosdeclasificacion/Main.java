@@ -68,7 +68,7 @@ public class Main {
                 System.out.println(r2[0] + " nanosegundos | " + r2[1] + " milisegundos.");
                 //System.out.println(clasif.tiempoMedioAlgoritmoBase(descendente, i+1, 100000000) + " nanosegundos.");
 
-                System.out.print("Vector Aletorio: ");
+                System.out.print("Vector Aleatorio: ");
                 int[] aletorio = vectorAleatorio.clone();
                 double[] r3 = clasif.tiempoMedioAlgoritmoBase(aletorio, i+1);
                 System.out.println(r3[0] + " nanosegundos | " + r3[1] + " milisegundos.");
