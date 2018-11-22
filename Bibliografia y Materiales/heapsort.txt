@@ -1,0 +1,9 @@
+Comienzo
+	Desde i=N div 2 hasta 1 hacer
+		DesplazaElemento(i,N)
+	Fin desde
+	Desde i=N hasta 2 hacer
+		Intercambia(V[1],V[i])
+		DesplazaElemento(1,i-1)
+	Fin desde
+Fin

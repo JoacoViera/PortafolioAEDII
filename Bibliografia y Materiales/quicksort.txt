@@ -1,0 +1,11 @@
+QUICKSORT
+quicksort (i, j: tipo entero)
+Comienzo
+	IndicePivote <- EncuentraPivote(i,j)
+	Si IndicePivote <> 0 entonces
+		pivote <- V[IndicePivote].clave
+		k <- particion(i,j,pivote)
+		quicksort(i,k-1)
+		quicksort(k,j)
+	Fin si
+Fin

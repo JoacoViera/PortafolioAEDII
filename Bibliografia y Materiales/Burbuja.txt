@@ -1,0 +1,10 @@
+BURBUJA
+Comienzo
+	Desde i=1 hasta N-1 hacer							O(n)
+		Desde j=N hasta i+1 hacer					O(n)
+			Si V[j].clave < V[j-1].clave entonces	O(1)
+				intercambia(V[j],V[j-1])			O(1)
+			Fin Si
+		Fin desde
+	Fin desde
+Fin

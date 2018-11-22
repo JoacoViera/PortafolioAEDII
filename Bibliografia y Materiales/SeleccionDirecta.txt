@@ -1,0 +1,13 @@
+COM
+	DESDE i=1 hasta N-1 HACER					O(N)
+		IndiceDelMenor <- i						O(1)
+		ClaveMenor <- V[i].clave				O(1)
+		DESDE j= i+1 hasta N HACER				O(N)
+			SI (V[j].clave < ClaveMenor) ENTONCES	O(1)
+				IndiceDelMenor <- j				O(1)
+				ClaveMenor <- V[j].clave		O(1)
+			FIN SI			
+		FIN DESDE
+		Intercambia(V[i],V[IndiceDelMenor])		O(1)
+	FIN DESDE
+FIN

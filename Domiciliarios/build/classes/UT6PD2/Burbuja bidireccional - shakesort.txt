@@ -1,0 +1,40 @@
+Procedimiento Ordenacion_Sacudida (v:vector, tam:entero) 
+ Variables
+   i, j, izq, der, último: tipoposicion;
+   aux: tipoelemento;
+ Inicio
+   //Límites superior e inferior de elementos ordenados
+   izq <- 2
+   der <- tam
+   último <- tam
+ 
+   Repetir
+     //Burbuja hacia la izquierda}
+     //Los valores menores van a la izquierda
+     //der va disminuyendo en 1 hasta llegar a izq
+        Para i <- der hasta izq hacer
+         Si v(i-1) > v(i) entonces
+             aux <- v(i)
+             v(i) <- v(i-1)
+             v(i-1) <- aux
+             último <- i
+         Fin_si
+     Fin_para
+     
+     izq <- último+1
+ 
+     //Burbuja hacia la derecha
+     //Los valores mayores van a la derecha
+     Para j <- izq hasta der hacer
+         Si v(j-1) > v(j) entonces
+             aux <- v(j)
+             v(j) <- v(j-1)
+             v(j-1) <- aux
+             último <- j
+         Fin_si
+     Fin_para
+ 
+     der <- último-1
+ 
+   Hasta (izq > der)
+ Fin
